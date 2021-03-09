@@ -225,7 +225,7 @@
     }
 }
 
-@media only screen and (hover: none){
+@media only screen and (hover: none) and (orientation: portrait){
     #header {
         width: 100%;
         display: grid;
@@ -251,6 +251,13 @@
     #townSelectionDiv {
         display: flex;
         justify-content: space-between;
+    }
+
+    .commonTitle {
+        color: gray;
+        font-family: Verdana, serif;
+        font-weight: lighter;
+        font-size: 20px;
     }
 }
 
