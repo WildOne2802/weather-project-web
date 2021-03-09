@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="icon" href="weather-icon-pack/svg/045-thunder.svg">
+    <link rel="stylesheet" href="weatherPageStyles.css">
+</head>
+
+<body id="body">
+<header id="header">
+    <div class="centralizeVertical">
+        <h2 class="commonTitle">Погода здесь</h2>
+    </div>
+    <div class="centralizeAll">
+        <button id="refreshButton">Обновить геолокацию</button>
+    </div>
+</header>
+
+<main id="mainSection">
+    <div id="mainDiv">
+        <h1 id="mainTitle">Saint-Petersburg</h1>
+        <div class="centralizeVertical">
+            <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
+        </div>
+        <a id="temperature">8°C</a>
+    </div>
+    <ul id="description">
+        <li class="descriptionLine">
+            <a class="descriptionText">Ветер</a>
+            <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+        </li>
+        <li class="descriptionLine">
+            <a class="descriptionText">Облачность</a>
+            <a class="descriptionText">Broken clouds</a>
+        </li>
+        <li class="descriptionLine">
+            <a class="descriptionText">Давление</a>
+            <a class="descriptionText">1013 hpa</a>
+        </li>
+        <li class="descriptionLine">
+            <a class="descriptionText">Влажность</a>
+            <a class="descriptionText">52%</a>
+        </li>
+        <li class="descriptionLine">
+            <a class="descriptionText">Координаты</a>
+            <a class="descriptionText">[59.88, 30.42]</a>
+        </li>
+    </ul>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+
