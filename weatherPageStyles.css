@@ -2,13 +2,13 @@
     margin: 0;
     padding-left: 5%;
     padding-right: 5%;
+    overflow-x: hidden;
 }
 
 #header {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 70px;
 }
 
 .commonTitle {
@@ -73,7 +73,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: solid 1px red;
     grid-template-rows: min-content;
 }
 
@@ -85,7 +84,6 @@
     grid-row-gap: 10px;
     list-style-type: none;
     padding: 0;
-    border: solid 1px red;
 }
 
 .descriptionLine {
@@ -109,7 +107,7 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10%;
     grid-template-rows: 5% 1fr 1fr 1fr;
-    grid-row-gap: 5%;
+    grid-row-gap: 20px;
 }
 
 .roundButton {
@@ -132,11 +130,12 @@
 #townSelectionDiv {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #townInput {
     height: 40px;
-    width: 40%;
+    flex: 1;
     margin-right: 10px;
     background-color: lightgray;
     border: solid 0px gray;
@@ -144,6 +143,7 @@
 }
 
 .miniIcon {
+    flex: 2;
     width: 50px;
     height: 50px;
 }
@@ -157,7 +157,6 @@
     grid-row-gap: 10px;
     list-style-type: none;
     padding: 0;
-    border: solid 1px green;
 }
 
 .cardTitleBox {
@@ -182,12 +181,84 @@
     display: grid;
     grid-template-rows: min-content;
     grid-row-gap: 10px;
-    border: solid 1px red;
 }
 
 .temperatureWeatherBox {
     display: flex;
     justify-content: space-between;
     width: 20%;
+    align-items: center;
 }
 
+@media screen and (max-width: 965px) {
+    #header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #mainSection {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 10px;
+    }
+
+    #footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 10%;
+        grid-template-rows: 40px 40px repeat(6, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    #townSelectionDiv {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 320px){
+    #body{
+        overflow-x: visible;
+    }
+}
+
+@media only screen and (hover: none){
+    #header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #mainSection {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 10px;
+    }
+
+    #footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 10%;
+        grid-template-rows: 40px 40px repeat(6, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    #townSelectionDiv {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .commonTitle {
+        font-size: 14px;
+    }
+    #mainTitle{
+        font-size: 16px;
+    }
+}
