@@ -256,6 +256,53 @@
     #mainTitle {
         font-size: 40px;
     }
+
+    .descriptionText {
+        color: whitesmoke;
+        font-family: Verdana, serif;
+        text-align: end;
+        font-size: 25px;
+    }
+    .descriptionLine {
+        min-height: 60px;
+        display: flex;
+        background-color: darkgray;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .commonTitle {
+        color: gray;
+        font-family: Verdana, serif;
+        font-weight: lighter;
+        font-size: 35px;
+    }
+
+    #townInput {
+        height: 60px;
+        flex: 1;
+        margin-right: 10px;
+        background-color: lightgray;
+        border: solid 0px gray;
+        padding-left: 10px;
+        font-size: 25px;
+    }
+
+    .cardTitleText {
+        font-family: Verdana, serif;
+        color: gray;
+        font-size: 30px;
+    }
+
+    .cardTemperatureText {
+        font-family: Verdana, serif;
+        font-weight: lighter;
+        color: gray;
+        font-size: 30px;
+    }
+
 }
 
 @media only screen and (hover: none) and (orientation: landscape) {
