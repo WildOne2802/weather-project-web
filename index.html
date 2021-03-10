@@ -16,6 +16,7 @@
     <div class="centralizeAll">
         <button id="refreshButton">Обновить геолокацию</button>
     </div>
+    <button id="refreshButtonMini"><a class="roundButtonTextCentralize">⟲</a></button>
 </header>
 
 <main id="mainSection">
@@ -25,29 +26,29 @@
             <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
         </div>
         <div class="centralizeVerticalReverse">
-            <a id="temperature">8°C</a>
+            <a id="mainTemperature">8°C</a>
         </div>
     </div>
     <ul id="mainDescription">
         <li class="descriptionLine">
             <a class="descriptionText">Ветер</a>
-            <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+            <a class="descriptionText" id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</a>
         </li>
         <li class="descriptionLine">
             <a class="descriptionText">Облачность</a>
-            <a class="descriptionText">Broken clouds</a>
+            <a class="descriptionText" id="mainCloudiness">Broken clouds</a>
         </li>
         <li class="descriptionLine">
             <a class="descriptionText">Давление</a>
-            <a class="descriptionText">1013 hpa</a>
+            <a class="descriptionText" id="mainPressure">1013 hpa</a>
         </li>
         <li class="descriptionLine">
             <a class="descriptionText">Влажность</a>
-            <a class="descriptionText">52%</a>
+            <a class="descriptionText" id="mainHumidity">52%</a>
         </li>
         <li class="descriptionLine">
             <a class="descriptionText">Координаты</a>
-            <a class="descriptionText">[59.88, 30.42]</a>
+            <a class="descriptionText" id="mainCoordinates">[59.88, 30.42]</a>
         </li>
     </ul>
 </main>
@@ -55,14 +56,16 @@
 <footer id="footer">
     <h2 class="commonTitle">Избранное</h2>
     <div id="townSelectionDiv">
-        <input placeholder="Добавить новый город" id="townInput"/>
-        <button class="roundButton"><a class="roundButtonTextCentralize">＋</a></button>
+        <div id="townSelectionInnerDiv">
+            <input placeholder="Добавить новый город" id="townInput"/>
+            <button class="roundButton"><a class="roundButtonTextCentralize">＋</a></button>
+        </div>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title0">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature0">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -70,31 +73,31 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind0">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness0">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure0">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity0">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates0">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title1">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature1">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -102,31 +105,31 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind1">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness1">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure1">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity1">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates1">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title2">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature2">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -134,31 +137,31 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind2">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness2">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure2">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity2">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates2">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title3">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature3">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -166,31 +169,31 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind3">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness3">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure3">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity3">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates3">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title4">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature4">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -198,31 +201,31 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind4">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness4">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure4">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity4">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates4">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
     <div class="weatherCard">
         <div class="cardTitleBox">
-            <h3 class="cardTitleText">Moscow</h3>
+            <h3 class="cardTitleText" id="Title5">Moscow</h3>
             <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText">5°C</h3>
+                <h3 class="cardTemperatureText" id="Temperature5">5°C</h3>
                 <img src="weather-icon-pack/svg/008-storm.svg" class="miniIcon"/>
             </div>
             <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
@@ -230,27 +233,27 @@
         <ul class="cardDescription">
             <li class="descriptionLine">
                 <a class="descriptionText">Ветер</a>
-                <a class="descriptionText">Moderate breeze, 6.0 m/s, North-northwest</a>
+                <a class="descriptionText" id="Wind5">Moderate breeze, 6.0 m/s, North-northwest</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Облачность</a>
-                <a class="descriptionText">Broken clouds</a>
+                <a class="descriptionText" id="Cloudiness5">Broken clouds</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Давление</a>
-                <a class="descriptionText">1013 hpa</a>
+                <a class="descriptionText" id="Pressure5">1013 hpa</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Влажность</a>
-                <a class="descriptionText">52%</a>
+                <a class="descriptionText" id="Humidity5">52%</a>
             </li>
             <li class="descriptionLine">
                 <a class="descriptionText">Координаты</a>
-                <a class="descriptionText">[59.88, 30.42]</a>
+                <a class="descriptionText" id="Coordinates5">[59.88, 30.42]</a>
             </li>
         </ul>
     </div>
 </footer>
-
+<script src="scripts.js"></script>
 </body>
 
