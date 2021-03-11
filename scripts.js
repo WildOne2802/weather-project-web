@@ -85,6 +85,15 @@ async function getCities() {
         })
     })
 
+
+    // function success(position) {
+    //    console.log(position)
+    // }
+    //
+    // function error() {
+    //     console.log('error')
+    // }
+    // navigator.geolocation.getCurrentPosition(success, error)
 }
 
 getCities()
