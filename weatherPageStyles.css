@@ -399,9 +399,12 @@
         grid-row-gap: 20px;
     }
 
-    #townSelectionDiv {
+    #townSelectionInnerDiv{
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
     }
 }
 
