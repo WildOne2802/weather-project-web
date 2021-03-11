@@ -68,6 +68,7 @@ async function getCities() {
         document.getElementById('mainPressure').innerText = (Number(response.current.pressure_mb) / 10) + ' kPa'
         document.getElementById('mainHumidity').innerText = response.current.humidity + '%'
         document.getElementById('mainCoordinates').innerText = '[' + response.location.lat + ', ' + response.location.lon + ']'
+        document.getElementById('mainWeatherIcon').src = response.current.condition.icon
     })
     let cities = ['Moscow', 'London', 'Nalchik', 'Stockholm', 'Helsinki', 'Oslo']
 
@@ -80,8 +81,10 @@ async function getCities() {
             document.getElementById(`Pressure${index}`).innerText = (Number(response.current.pressure_mb) / 10) + ' kPa'
             document.getElementById(`Humidity${index}`).innerText = response.current.humidity + '%'
             document.getElementById(`Coordinates${index}`).innerText = '[' + response.location.lat + ', ' + response.location.lon + ']'
+            document.getElementById(`miniIcon${index}`).src = response.current.condition.icon
         })
     })
+
 }
 
 getCities()
