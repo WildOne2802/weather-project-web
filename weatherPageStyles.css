@@ -210,7 +210,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1120px) and (pointer: fine){
     #header {
         width: 100%;
         display: flex;
@@ -258,9 +258,26 @@
         align-items: center;
     }
 
+    .weatherCard {
+        width: 100%;
+        display: grid;
+        grid-template-rows: min-content;
+        grid-row-gap: 10px;
+    }
+
+    .cardDescription {
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: space-between;*/
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-row-gap: 10px;
+        list-style-type: none;
+        padding: 0;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) and (pointer: fine) {
     #body {
         overflow-x: visible;
     }
@@ -285,19 +302,18 @@
     #footer {
         display: grid;
         grid-template-columns: 1fr;
-        grid-column-gap: 10%;
-        grid-template-rows: 40px 40px repeat(6, 1fr);
+        grid-template-rows: 100px 100px repeat(6, 1fr);
+        /*grid-template-rows: 40px 40px repeat(6, 1fr);*/
         grid-row-gap: 20px;
     }
 
-    #townSelectionDiv {
+    #townSelectionInnerDiv{
         display: flex;
         justify-content: space-between;
         width: 100%;
         flex-direction: row;
         align-items: center;
     }
-
     #mainTitle {
         font-size: 40px;
     }
@@ -349,6 +365,14 @@
         font-size: 30px;
     }
 
+    #refreshButtonMini {
+        display: block;
+    }
+
+    #refreshButton {
+        display: none;
+    }
+
 }
 
 @media only screen and (hover: none) and (orientation: landscape) {
@@ -381,7 +405,7 @@
     }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 520px) and (pointer: fine){
     #refreshButtonMini {
         display: block;
     }
@@ -389,7 +413,6 @@
     #refreshButton {
         display: none;
     }
-
 
     .commonTitle {
         font-size: 14px;
@@ -437,7 +460,7 @@
     }
 }
 
-@media screen and (max-width: 370px){
+@media screen and (max-width: 370px) and (pointer: fine){
     #mainTemperature {
         font-size: 50px;
     }
