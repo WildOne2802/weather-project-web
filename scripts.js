@@ -1,6 +1,6 @@
 async function getLocalWeather(city) {
     let result
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=8ca4059b94004ddf92c114321211003&q=${city}`).then(r => result = r.json())
+    await fetch(`http://api.weatherapi.com/v1/current.json?key=87fce2d80f614e05b08155651211803&q=${city}`).then(r => result = r.json())
     return result
 }
 

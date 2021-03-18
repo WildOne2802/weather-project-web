@@ -8,264 +8,267 @@
     <link rel="stylesheet" href="weatherPageStyles.css">
 </head>
 
-<body id="body">
-<header id="header">
+<body>
+<header>
     <div class="centralizeVertical">
-        <h2 class="commonTitle">Погода здесь</h2>
+        <h1 class="commonTitle">Погода здесь</h1>
     </div>
     <div class="centralizeAll">
         <button id="refreshButton">Обновить геолокацию</button>
     </div>
-    <button id="refreshButtonMini"><a class="roundButtonTextCentralize">⟲</a></button>
+    <button id="refreshButtonMini" class="roundButtonTextCentralize">⟲</button>
 </header>
-
-<main id="mainSection">
-    <div id="mainDiv">
-        <h1 id="mainTitle">Saint-Petersburg</h1>
-        <div class="centralizeVertical">
-            <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
+<main>
+    <section id="mainSection">
+        <div id="mainDiv">
+            <h2 id="mainTitle">Saint-Petersburg</h2>
+            <div class="centralizeVertical">
+                <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
+            </div>
+            <div class="centralizeVerticalReverse">
+                <p id="mainTemperature">8°C</p>
+            </div>
         </div>
-        <div class="centralizeVerticalReverse">
-            <a id="mainTemperature">8°C</a>
+        <div class="mainDescriptionBox">
+            <ul class="cardDescription" id="mainDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="mainCloudiness">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="mainPressure">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="mainHumidity">52%</p>
+                </li>
+                <li class="descriptionLine">
+                    <p>Координаты</p>
+                    <p id="mainCoordinates">[59.88, 30.42]</p>
+                </li>
+            </ul>
         </div>
-    </div>
-    <ul id="mainDescription">
-        <li class="descriptionLine">
-            <a class="descriptionText">Ветер</a>
-            <a class="descriptionText" id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</a>
-        </li>
-        <li class="descriptionLine">
-            <a class="descriptionText">Облачность</a>
-            <a class="descriptionText" id="mainCloudiness">Broken clouds</a>
-        </li>
-        <li class="descriptionLine">
-            <a class="descriptionText">Давление</a>
-            <a class="descriptionText" id="mainPressure">1013 hpa</a>
-        </li>
-        <li class="descriptionLine">
-            <a class="descriptionText">Влажность</a>
-            <a class="descriptionText" id="mainHumidity">52%</a>
-        </li>
-        <li class="descriptionLine">
-            <a class="descriptionText">Координаты</a>
-            <a class="descriptionText" id="mainCoordinates">[59.88, 30.42]</a>
-        </li>
-    </ul>
+    </section>
+    <section id="favourite">
+        <h2 class="commonTitle">Избранное</h2>
+        <div id="townSelectionDiv">
+            <div>
+                <input placeholder="Добавить новый город" id="townInput"/>
+                <button class="roundButton roundButtonTextCentralize">＋</button>
+            </div>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title0">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature0">5°C</p>
+                    <img id="miniIcon0" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind0">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness0">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure0">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity0">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates0">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title1">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature1">5°C</p>
+                    <img id="miniIcon1" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind1">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness1">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure1">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity1">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates1">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title2">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature2">5°C</p>
+                    <img id="miniIcon2" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind2">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness2">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure2">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity2">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates2">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title3">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature3">5°C</p>
+                    <img id="miniIcon3" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind3">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness3">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure3">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity3">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates3">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title4">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature4">5°C</p>
+                    <img id="miniIcon4" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind4">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness4">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure4">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity4">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates4">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weatherCard">
+            <div class="cardTitleBox">
+                <h3 id="Title5">Moscow</h3>
+                <div class="temperatureWeatherBox">
+                    <p id="Temperature5">5°C</p>
+                    <img id="miniIcon5" src="weather-icon-pack/svg/008-storm.svg"/>
+                </div>
+                <div class="closeButtonBox">
+                    <button class="roundButton roundButtonTextCentralize">✕</button>
+                </div>
+            </div>
+            <ul class="cardDescription">
+                <li>
+                    <p>Ветер</p>
+                    <p id="Wind5">Moderate breeze, 6.0 m/s, North-northwest</p>
+                </li>
+                <li>
+                    <p>Облачность</p>
+                    <p id="Cloudiness5">Broken clouds</p>
+                </li>
+                <li>
+                    <p>Давление</p>
+                    <p id="Pressure5">1013 hpa</p>
+                </li>
+                <li>
+                    <p>Влажность</p>
+                    <p id="Humidity5">52%</p>
+                </li>
+                <li>
+                    <p>Координаты</p>
+                    <p id="Coordinates5">[59.88, 30.42]</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 </main>
-
-<footer id="footer">
-    <h2 class="commonTitle">Избранное</h2>
-    <div id="townSelectionDiv">
-        <div id="townSelectionInnerDiv">
-            <input placeholder="Добавить новый город" id="townInput"/>
-            <button class="roundButton"><a class="roundButtonTextCentralize">＋</a></button>
-        </div>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title0">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature0">5°C</h3>
-                <img id="miniIcon0" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind0">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness0">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure0">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity0">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates0">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title1">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature1">5°C</h3>
-                <img id="miniIcon1" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind1">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness1">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure1">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity1">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates1">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title2">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature2">5°C</h3>
-                <img id="miniIcon2" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind2">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness2">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure2">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity2">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates2">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title3">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature3">5°C</h3>
-                <img id="miniIcon3" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind3">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness3">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure3">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity3">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates3">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title4">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature4">5°C</h3>
-                <img id="miniIcon4" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind4">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness4">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure4">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity4">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates4">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-    <div class="weatherCard">
-        <div class="cardTitleBox">
-            <h3 class="cardTitleText" id="Title5">Moscow</h3>
-            <div class="temperatureWeatherBox">
-                <h3 class="cardTemperatureText" id="Temperature5">5°C</h3>
-                <img id="miniIcon5" src="weather-icon-pack/svg/008-storm.svg" class="miniWeatherIcon"/>
-            </div>
-            <div class="closeButtonBox">
-                <button class="roundButton"><a class="roundButtonTextCentralize">✕</a></button>
-            </div>
-        </div>
-        <ul class="cardDescription">
-            <li class="descriptionLine">
-                <a class="descriptionText">Ветер</a>
-                <a class="descriptionText" id="Wind5">Moderate breeze, 6.0 m/s, North-northwest</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Облачность</a>
-                <a class="descriptionText" id="Cloudiness5">Broken clouds</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Давление</a>
-                <a class="descriptionText" id="Pressure5">1013 hpa</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Влажность</a>
-                <a class="descriptionText" id="Humidity5">52%</a>
-            </li>
-            <li class="descriptionLine">
-                <a class="descriptionText">Координаты</a>
-                <a class="descriptionText" id="Coordinates5">[59.88, 30.42]</a>
-            </li>
-        </ul>
-    </div>
-</footer>
 <script src="scripts.js"></script>
+<script src="apiKey.js"></script>
 </body>
 
