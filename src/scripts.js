@@ -103,7 +103,7 @@ async function getCities() {
             }).catch(e => console.log(e))
         }
     )
-    let cities = ['Moscow', 'London', 'Nalchik', 'Stockholm', 'Helsinki', 'Oslo']
+    let cities = ['Moscow', 'London', 'Нальчик', 'Stockholm', 'Helsinki', 'Oslo']
 
     cities.map((x, index) => {
         getWeatherForCity(x).then(response => {
@@ -117,6 +117,10 @@ async function getCities() {
             document.getElementById(`miniIcon${index}`).src = response.current.condition.icon
         })
     })
+}
+
+function refetch(){
+    getCities()
 }
 
 getCities()
