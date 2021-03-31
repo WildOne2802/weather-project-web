@@ -16,7 +16,6 @@ header {
     font-weight: lighter;
 }
 
-
 #refreshButton {
     height: 50px;
     width: 300px;
@@ -66,28 +65,27 @@ header {
     grid-column: 1 / 3;
 }
 
-#mainWeatherIcon {
-    height: auto;
-    width: 200px;
+#mainDiv {
+    width: 100%;
 }
 
-#mainTemperature {
+.mainTemperatureWeatherBox {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainTemperatureWeatherBox img {
+    height: 200px;
+    width: auto;
+}
+
+.mainTemperatureWeatherBox p {
     color: gray;
     font-family: Verdana, serif;
     font-weight: lighter;
     font-size: 85px;
-}
-
-#mainDiv {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content;
-}
-
-.mainDescriptionBox {
-    display: flex;
-    align-items: center;
 }
 
 #favourite {
@@ -140,11 +138,16 @@ header {
 }
 
 .cardDescription {
-    flex: 1;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-row-gap: 10px;
-    list-style-type: none;
+    display: flex;
+    /*display: grid;*/
+    /*grid-template-rows: repeat(5, 1fr);*/
+    /*grid-row-gap: 10px;*/
+    /*list-style-type: none;*/
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    /*border: 1px red solid;*/
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 
@@ -169,7 +172,7 @@ header {
 .cardTitleBox {
     width: 100%;
     display: grid;
-    grid-template-columns: 25% 15% 60%;
+    grid-template-columns: 40% 60%;
 }
 
 .cardTitleBox h3 {
@@ -191,20 +194,21 @@ header {
     grid-row-gap: 10px;
 }
 
-.temperatureWeatherBox {
+.titleTemperatureWeatherBox {
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
 
-.temperatureWeatherBox p {
+
+.titleTemperatureWeatherBox p {
     font-family: Verdana, serif;
     font-weight: lighter;
     color: gray;
 }
 
-.temperatureWeatherBox img {
+.titleTemperatureWeatherBox img {
     height: 50px;
     width: 50px;
 }
@@ -262,14 +266,6 @@ header {
         display: grid;
         grid-template-rows: min-content;
         grid-row-gap: 10px;
-    }
-
-    .cardDescription {
-        display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-row-gap: 10px;
-        list-style-type: none;
-        padding: 0;
     }
 }
 
@@ -338,7 +334,7 @@ header {
         font-size: 30px;
     }
 
-    .temperatureWeatherBox p {
+    .titleTemperatureWeatherBox p {
         font-family: Verdana, serif;
         font-weight: lighter;
         color: gray;
@@ -393,7 +389,7 @@ header {
         display: block;
     }
 
-    .cardDescription p{
+    .cardDescription p {
         font-size: 12px;
     }
 
@@ -415,16 +411,17 @@ header {
         font-size: 20px;
     }
 
-    #mainTemperature {
+    .mainTemperatureWeatherBox p {
         font-size: 60px;
     }
+
 
     #mainWeatherIcon {
         height: auto;
         width: 150px;
     }
 
-    .temperatureWeatherBox p {
+    .titleTemperatureWeatherBox p {
         font-size: 14px;
     }
 
@@ -450,7 +447,7 @@ header {
 }
 
 @media screen and (max-width: 370px) and (pointer: fine) {
-    #mainTemperature {
+    .mainTemperatureWeatherBox p {
         font-size: 50px;
     }
 

@@ -22,37 +22,35 @@
     <section id="mainSection">
         <div id="mainDiv">
             <h2 id="mainTitle">Saint-Petersburg</h2>
-            <div class="centralizeVertical">
+            <div class="mainTemperatureWeatherBox">
                 <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
-            </div>
-            <div class="centralizeVerticalReverse">
+<!--            </div>-->
+<!--            <div class="centralizeVerticalReverse">-->
                 <p id="mainTemperature">8°C</p>
             </div>
         </div>
-        <div class="mainDescriptionBox">
-            <ul class="cardDescription" id="mainDescription">
-                <li>
-                    <p>Ветер</p>
-                    <p id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</p>
-                </li>
-                <li>
-                    <p>Облачность</p>
-                    <p id="mainCloudiness">Broken clouds</p>
-                </li>
-                <li>
-                    <p>Давление</p>
-                    <p id="mainPressure">1013 hpa</p>
-                </li>
-                <li>
-                    <p>Влажность</p>
-                    <p id="mainHumidity">52%</p>
-                </li>
-                <li class="descriptionLine">
-                    <p>Координаты</p>
-                    <p id="mainCoordinates">[59.88, 30.42]</p>
-                </li>
-            </ul>
-        </div>
+        <ul class="cardDescription" id="mainDescription">
+            <li>
+                <p>Ветер</p>
+                <p id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</p>
+            </li>
+            <li>
+                <p>Облачность</p>
+                <p id="mainCloudiness">Broken clouds</p>
+            </li>
+            <li>
+                <p>Давление</p>
+                <p id="mainPressure">1013 hpa</p>
+            </li>
+            <li>
+                <p>Влажность</p>
+                <p id="mainHumidity">52%</p>
+            </li>
+            <li class="descriptionLine">
+                <p>Координаты</p>
+                <p id="mainCoordinates">[59.88, 30.42]</p>
+            </li>
+        </ul>
     </section>
     <section id="favourite">
         <h2 class="commonTitle">Избранное</h2>
@@ -64,8 +62,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title0">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title0">Moscow</h3>
                     <p id="Temperature0">5°C</p>
                     <img id="miniIcon0" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -98,8 +96,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title1">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title1">Moscow</h3>
                     <p id="Temperature1">5°C</p>
                     <img id="miniIcon1" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -132,8 +130,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title2">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title2">Moscow</h3>
                     <p id="Temperature2">5°C</p>
                     <img id="miniIcon2" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -166,8 +164,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title3">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title3">Moscow</h3>
                     <p id="Temperature3">5°C</p>
                     <img id="miniIcon3" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -200,8 +198,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title4">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title4">Moscow</h3>
                     <p id="Temperature4">5°C</p>
                     <img id="miniIcon4" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -234,8 +232,8 @@
         </div>
         <div class="weatherCard">
             <div class="cardTitleBox">
-                <h3 id="Title5">Moscow</h3>
-                <div class="temperatureWeatherBox">
+                <div class="titleTemperatureWeatherBox">
+                    <h3 id="Title5">Moscow</h3>
                     <p id="Temperature5">5°C</p>
                     <img id="miniIcon5" src="weather-icon-pack/svg/008-storm.svg"/>
                 </div>
@@ -268,7 +266,6 @@
         </div>
     </section>
 </main>
-<script src="scripts.js"></script>
-<script src="apiKey.js"></script>
+<script src="src/scripts.js"></script>
 </body>
 
