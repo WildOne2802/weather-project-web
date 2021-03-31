@@ -73,7 +73,7 @@ function currentLocationGetter() {
 
 async function getWeatherForCity(city) {
     let result
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`).then(r => result = r.json())
+    await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`).then(r => result = r.json())
     return result
 }
 
@@ -81,7 +81,7 @@ async function getWeatherWithCoordinates({latitude, longitude}) {
     console.log(latitude, longitude)
     let result
     try {
-        await fetch(`http://api.weatherapi.com/v1/current.json?key=87fce2d80f614e05b08155651211803&q=${latitude},${longitude}`).then(r => result = r.json())
+        await fetch(`https://api.weatherapi.com/v1/current.json?key=87fce2d80f614e05b08155651211803&q=${latitude},${longitude}`).then(r => result = r.json())
     } catch (e) {
         console.log("[getWeatherWithCoordinates] Cannot get weather for location")
     }
