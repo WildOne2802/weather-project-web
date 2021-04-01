@@ -92,7 +92,6 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10%;
-    grid-template-rows: 5% 1fr 1fr 1fr;
     grid-row-gap: 20px;
 }
 
@@ -172,7 +171,7 @@ header {
 .cardTitleBox {
     width: 100%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
 }
 
 .cardTitleBox h3 {
@@ -243,7 +242,6 @@ header {
         display: grid;
         grid-template-columns: 1fr;
         grid-column-gap: 10%;
-        grid-template-rows: 40px 40px repeat(6, 1fr);
         grid-row-gap: 20px;
     }
 
@@ -370,8 +368,6 @@ header {
     #favourite {
         display: grid;
         grid-template-columns: 1fr;
-        grid-column-gap: 10%;
-        grid-template-rows: 40px 40px repeat(6, 1fr);
         grid-row-gap: 20px;
     }
 
@@ -463,6 +459,33 @@ header {
         background-color: lightgray;
         border-radius: 15px;
     }
+}
 
+.loader {
+    display: none;
+    border-radius: 50%;
+    border-top: 5px solid darkgray;
+    width: 250px;
+    height: 250px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
