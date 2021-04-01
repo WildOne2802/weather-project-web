@@ -147,7 +147,6 @@ function deleteCityCard(name) {
     console.log(name)
     document.getElementById(name + "-city").remove();
     removeCityFromLocalStorage(name)
-    // loadedCities = loadedCities.filter((item) => item !== name)
 }
 
 function createCard(name) {
