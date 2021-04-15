@@ -286,17 +286,7 @@ header {
     #favourite {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 100px repeat(6, 1fr);
-        /*grid-template-rows: 40px 40px repeat(6, 1fr);*/
         grid-row-gap: 20px;
-    }
-
-    #townSelectionInnerDiv {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
     }
 
     #mainTitle {
@@ -320,12 +310,6 @@ header {
         font-size: 25px;
     }
 
-    .cardTitleBox h3 {
-        font-family: Verdana, serif;
-        color: gray;
-        font-size: 30px;
-    }
-
     .titleTemperatureWeatherBox p {
         font-family: Verdana, serif;
         font-weight: lighter;
@@ -341,6 +325,38 @@ header {
         display: none;
     }
 
+    #mainWeatherIcon{
+        height: auto;
+        width: 150px;
+    }
+    #townSelectionDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    #townSelectionDiv div{
+        width: 100%;
+    }
+
+    .titleTemperatureWeatherBox h3 {
+        font-size: 20px;
+    }
+
+    .closeButtonBox {
+        width: auto;
+    }
+
+    .cardTitleBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .titleTemperatureWeatherBox p {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (hover: none) and (orientation: landscape) {
@@ -363,14 +379,6 @@ header {
         display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
-    }
-
-    #townSelectionInnerDiv {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
     }
 }
 
