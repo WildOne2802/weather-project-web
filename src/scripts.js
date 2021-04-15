@@ -1,12 +1,11 @@
-// template
+// template +
 // ; in each end line +
-// Promise all
+// Promise all +
 // Same cities in english and russian +
-// Alert if city is already shown
+// Alert if city is already shown +
 // Remove logging in getWeatherForCity and getWeatherWithCoordinates +
 
-
-const API_KEY = "87fce2d80f614e05b08155651211803";
+const OPEN_WEATHER_API_KEY = "5a64a59089eaa18ea98d99d393e609f6";
 
 const LOCAL_STORAGE_KEY = "Weather-for-each-city";
 
@@ -75,7 +74,10 @@ function directionDefiner(direction) {
 
 function currentLocationGetter() {
     return new Promise((resolve, reject) => {
-            geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
+            console.log("currentLocationGetter check")
+            geolocation.getCurrentPosition(
+                ({coords: {latitude, longitude}}) => {
+                    console.log("[getCurrentPosition] check")
                     resolve({latitude, longitude});
                 },
                 (error) => {
@@ -88,11 +90,13 @@ function currentLocationGetter() {
 }
 
 async function getWeatherForCity(city) {
-    return await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`).then(r => r.json());
+    // return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
+    return await fetch(`http://localhost:3000/weather/city?name=${city}`).then(r => r.json());
 }
 
 async function getWeatherWithCoordinates({latitude, longitude}) {
-    return await fetch(`https://api.weatherapi.com/v1/current.json?key=87fce2d80f614e05b08155651211803&q=${latitude},${longitude}`).then(r => r.json());
+    // return await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
+    return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`).then(r => r.json());
 }
 
 async function loadFromLocalStorage() {
@@ -110,9 +114,10 @@ async function addCityToLocalStorage(name) {
         if (!currentState.includes(name)) {
             currentState.push(name);
             localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentState));
+        } else {
+            alert("City is already added");
         }
     } else {
-        alert("City already added")
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentState));
     }
 }
@@ -126,138 +131,133 @@ async function removeCityFromLocalStorage(name) {
 }
 
 async function submitCity() {
-    getWeatherForCity(document.getElementById("townInput").value).then(response => {
-        console.log("[Response] hello")
-            if (!response.error && response !== null) {
-                console.log("[hey] hello")
-                addCityToLocalStorage(response.location.name).then(
-                    () => {
-                        console.log("[ADDED]")
-                        document.getElementById("townInput").value = null;
-                        getCities();
-                    }
-                )
-            } else {
-                console.log("[hey] not done")
-                alert("No matching location found.");
-            }
-        }
-    )
-}
-
-function deleteCityCard(name) {
-    console.log(name);
-    document.getElementById(name + "-city").remove();
-    removeCityFromLocalStorage(name);
-}
-
-function createCard(name) {
-    getWeatherForCity(name).then(response => {
-            const template = `
-            <div class="cardTitleBox">
-                <div class="titleTemperatureWeatherBox">
-                    <h3>${response.location.name}</h3>
-                    <p>${response.current.temp_c} °C</p>
-                    <img src="${response.current.condition.icon}"/>
-                </div>
-                <div class="closeButtonBox">
-                    <button id="${response.location.name}" class="roundButton roundButtonTextCentralize" onclick="deleteCityCard(this.id)">✕</button>
-                </div>
-            </div>
-            <ul class="cardDescription">
-                <li>
-                    <p>Ветер</p>
-                    <p>${(Number(response.current.wind_kph) * 1000 / 3600).toFixed(2) + ' m/s, ' + directionDefiner(response.current.wind_dir)}</p>
-                </li>
-                <li>
-                    <p>Облачность</p>
-                    <p>${response.current.cloud + '%'}</p>
-                </li>
-                <li>
-                    <p>Давление</p>
-                    <p>${(Number(response.current.pressure_mb) / 10) + ' kPa'}</p>
-                </li>
-                <li>
-                    <p>Влажность</p>
-                    <p>${response.current.humidity + '%'}</p>
-                </li>
-                <li>
-                    <p>Координаты</p>
-                    <p>${'[' + response.location.lat + ', ' + response.location.lon + ']'}</p>
-                </li>
-            </ul>
-        </div>`;
-            let card = document.createElement("div");
-            card.innerHTML = template;
-            card.classList.add("weatherCard");
-            card.id = response.location.name + "-city";
-            console.log(document.getElementById("favourite"));
-            weatherFavourite.appendChild(card);
-        }
-    )
-}
-
-async function getCities() {
-    let cities = await loadFromLocalStorage();
-    // console.log(cities);
-    await currentLocationWeather()
-    if (cities) {
-        cities.map((x) => {
-                if (!document.getElementById(x + "-city")) {
-                    createCard(x);
+    let city = document.getElementById("townInput").value;
+    if (city) {
+        getWeatherForCity(city).then(response => {
+                if (!response.error && response !== null) {
+                    addCityToLocalStorage(response.name).then(
+                        () => {
+                            document.getElementById("townInput").value = null;
+                            getCities();
+                        }
+                    )
+                } else {
+                    alert("No matching location found.");
                 }
             }
         )
     }
 }
 
+function deleteCityCard(name) {
+    // console.log(name)
+    document.getElementById(name + "-city").remove();
+    removeCityFromLocalStorage(name);
+}
+
+function createCard(response) {
+    let template = document.getElementById('temp');
+    let clone = template.content.cloneNode(true);
+    let h3 = clone.querySelector("h3");
+    h3.textContent = response.name;
+    let pArray = clone.querySelectorAll("p");
+
+    pArray[0].textContent = (Math.ceil(Number(response.main.temp))) + " °C";
+    pArray[2].textContent = (response.wind.speed.toFixed(2)) + ' m/s, ' + response.wind.deg;
+    pArray[4].textContent = response.clouds.all + '%';
+    pArray[6].textContent = (Number(response.main.pressure) / 10) + ' kPa';
+    pArray[8].textContent = response.main.humidity + '%';
+    pArray[10].textContent = '[' + response.coord.lat + ', ' + response.coord.lon + ']';
+
+    let img = clone.querySelector("img");
+    img.src = `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
+
+    let button = clone.querySelector("button");
+    button.id = response.name;
+
+    // let card = document.createElement("div");
+    // card.innerHTML = template;
+
+    let div = clone.querySelector(".weatherCard");
+    div.id = response.name + "-city";
+
+
+    // let result = document.createElement("div");
+    // result.appendChild(clone);
+    // console.log(clone)
+
+    // console.log(document.getElementById("favourite"))
+    weatherFavourite.appendChild(clone);
+}
+
+async function getCities() {
+    let cities = await loadFromLocalStorage();
+    await currentLocationWeather();
+
+    let promiseArray = [];
+
+    if (cities) {
+        cities.map((x) => {
+                if (!document.getElementById(x + "-city")) {
+                    promiseArray.push(getWeatherForCity(x));
+                }
+            }
+        );
+    }
+    Promise.all(promiseArray).then(() => {
+            promiseArray.map((x) => {
+                x.then(response => createCard(response));
+            });
+        }
+    )
+}
+
+function fillerForMain(data) {
+    document.getElementById('mainTitle').innerText = data.name;
+    document.getElementById('mainTemperature').innerText = (Math.ceil(Number(data.main.temp))) + '°C';
+    document.getElementById('mainWind').innerText = (data.wind.speed.toFixed(2)) + ' m/s, ' + data.wind.deg;
+    document.getElementById('mainCloudiness').innerText = data.clouds.all + '%';
+    document.getElementById('mainPressure').innerText = (Number(data.main.pressure) / 10) + ' kPa';
+    document.getElementById('mainHumidity').innerText = data.main.humidity + '%';
+    document.getElementById('mainCoordinates').innerText = '[' + data.coord.lat + ', ' + data.coord.lon + ']';
+    document.getElementById('mainWeatherIcon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+}
+
 async function currentLocationWeather() {
     try {
         await currentLocationGetter().then(response => {
                 getWeatherWithCoordinates(response).then(response => {
-                    document.getElementById('mainTitle').innerText = response.location.name;
-                    document.getElementById('mainTemperature').innerText = response.current.temp_c + '°C';
-                    document.getElementById('mainWind').innerText = (Number(response.current.wind_kph) * 1000 / 3600).toFixed(2) + ' m/s, ' + directionDefiner(response.current.wind_dir);
-                    document.getElementById('mainCloudiness').innerText = response.current.cloud + '%';
-                    document.getElementById('mainPressure').innerText = (Number(response.current.pressure_mb) / 10) + ' kPa';
-                    document.getElementById('mainHumidity').innerText = response.current.humidity + '%';
-                    document.getElementById('mainCoordinates').innerText = '[' + response.location.lat + ', ' + response.location.lon + ']';
-                    document.getElementById('mainWeatherIcon').src = response.current.condition.icon;
-                })
-
+                    fillerForMain(response);
+                });
             }
         )
     } catch (e) {
-        console.log(e)
+        console.log(e);
         getWeatherForCity(defaultCity).then(response => {
-            document.getElementById('mainTitle').innerText = response.location.name
-            document.getElementById('mainTemperature').innerText = response.current.temp_c + '°C';
-            document.getElementById('mainWind').innerText = (Number(response.current.wind_kph) * 1000 / 3600).toFixed(2) + ' m/s, ' + directionDefiner(response.current.wind_dir);
-            document.getElementById('mainCloudiness').innerText = response.current.cloud + '%';
-            document.getElementById('mainPressure').innerText = (Number(response.current.pressure_mb) / 10) + ' kPa';
-            document.getElementById('mainHumidity').innerText = response.current.humidity + '%';
-            document.getElementById('mainCoordinates').innerText = '[' + response.location.lat + ', ' + response.location.lon + ']';
-            document.getElementById('mainWeatherIcon').src = response.current.condition.icon;
+            fillerForMain(response);
         })
     }
 
 }
 
 function locationRefreshListener() {
-    console.log("Refresh");
-    let elems = document.getElementsByClassName("loader");
-    document.getElementById("mainDiv").style.display = "none";
-    document.getElementById("mainDescription").style.display = "none";
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].style.display = "block";
-    }
-    currentLocationWeather().then(() => {
-        for (let i = 0; i < elems.length; i++) {
-            elems[i].style.display = "none";
-        }
-        document.getElementById("mainDiv").style.display = "block";
-        document.getElementById("mainDescription").style.display = "flex";
-    })
+    // console.log("Refresh");
+    // let elems = document.getElementsByClassName("loader");
+    // document.getElementById("mainDiv").style.display = "none";
+    // document.getElementById("mainDescription").style.display = "none";
+    // for (let i = 0; i < elems.length; i++) {
+    //     elems[i].style.display = "block";
+    // }
+    // currentLocationWeather().then(() => {
+    //     for (let i = 0; i < elems.length; i++) {
+    //         elems[i].style.display = "none";
+    //     }
+    //     document.getElementById("mainDiv").style.display = "block";
+    //     document.getElementById("mainDescription").style.display = "flex";
+    // })
+    let loading = document.querySelector("#mainWeatherIcon");
+    loading.src = "Dual%20Ring-1s-200px.svg";
+    currentLocationWeather();
 }
 
 function refresh() {
