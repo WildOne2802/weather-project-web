@@ -172,6 +172,7 @@ header {
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 10px;
 }
 
 .cardTitleBox h3 {
@@ -188,9 +189,9 @@ header {
 
 .weatherCard {
     width: 100%;
-    display: grid;
-    grid-template-rows: min-content;
-    grid-row-gap: 10px;
+    /*display: grid;*/
+    /*grid-template-rows: min-content;*/
+    /*grid-row-gap: 10px;*/
 }
 
 .titleTemperatureWeatherBox {
@@ -257,13 +258,6 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .weatherCard {
-        width: 100%;
-        display: grid;
-        grid-template-rows: min-content;
-        grid-row-gap: 10px;
     }
 }
 

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+<!--Grid on weather card change with Margin  +-->
+<!--Remove default Saint-Petersburg +-->
+<!--Searching line on mobile phones-->
+<!--Font sizes on mobile devices-->
+<!--Loader is jumping +-->
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
     <link rel="icon" href="weather-icon-pack/svg/045-thunder.svg">
     <link rel="stylesheet" href="weatherPageStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -21,32 +26,32 @@
 <main>
     <section id="mainSection">
         <div id="mainDiv">
-            <h2 id="mainTitle">Saint-Petersburg</h2>
+            <h2 id="mainTitle">--</h2>
             <div class="mainTemperatureWeatherBox">
-                <img src="weather-icon-pack/svg/006-snowy.svg" id="mainWeatherIcon"/>
-                <p id="mainTemperature">8°C</p>
+                <img src="Dual%20Ring-1s-200px.svg" id="mainWeatherIcon"/>
+                <p id="mainTemperature">--</p>
             </div>
         </div>
         <ul class="cardDescription" id="mainDescription">
             <li>
                 <p>Ветер</p>
-                <p id="mainWind">Moderate breeze, 6.0 m/s, North-northwest</p>
+                <p id="mainWind">--</p>
             </li>
             <li>
                 <p>Облачность</p>
-                <p id="mainCloudiness">Broken clouds</p>
+                <p id="mainCloudiness">--</p>
             </li>
             <li>
                 <p>Давление</p>
-                <p id="mainPressure">1013 hpa</p>
+                <p id="mainPressure">--</p>
             </li>
             <li>
                 <p>Влажность</p>
-                <p id="mainHumidity">52%</p>
+                <p id="mainHumidity">--</p>
             </li>
-            <li class="descriptionLine">
+            <li>
                 <p>Координаты</p>
-                <p id="mainCoordinates">[59.88, 30.42]</p>
+                <p id="mainCoordinates">--</p>
             </li>
         </ul>
         <div class="loader"></div>
@@ -61,6 +66,45 @@
         </div>
     </section>
 </main>
-<script src="src/scripts.js"></script>
+
+<template id="temp">
+    <div class="weatherCard">
+        <div class="cardTitleBox">
+            <div class="titleTemperatureWeatherBox">
+                <h3></h3>
+                <p></p>
+                <img/>
+            </div>
+            <div class="closeButtonBox">
+                <button class="roundButton roundButtonTextCentralize"
+                        onclick="deleteCityCard(this.id)">✕
+                </button>
+            </div>
+        </div>
+        <ul class="cardDescription">
+            <li>
+                <p>Ветер</p>
+                <p></p>
+            </li>
+            <li>
+                <p>Облачность</p>
+                <p></p>
+            </li>
+            <li>
+                <p>Давление</p>
+                <p></p>
+            </li>
+            <li>
+                <p>Влажность</p>
+                <p></p>
+            </li>
+            <li>
+                <p>Координаты</p>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+</template>
+<script src="src/scripts2.js"></script>
 </body>
 
