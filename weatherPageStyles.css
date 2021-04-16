@@ -325,18 +325,20 @@ header {
         display: none;
     }
 
-    #mainWeatherIcon{
+    #mainWeatherIcon {
         height: auto;
         width: 150px;
     }
-    #townSelectionDiv{
+
+    #townSelectionDiv {
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
     }
-    #townSelectionDiv div{
+
+    #townSelectionDiv div {
         width: 100%;
     }
 
@@ -463,31 +465,44 @@ header {
     }
 }
 
-.loader {
-    display: none;
-    border-radius: 50%;
-    border-top: 5px solid darkgray;
-    width: 250px;
-    height: 250px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+/*.loader {*/
+/*    display: none;*/
+/*    border-radius: 50%;*/
+/*    border-top: 5px solid darkgray;*/
+/*    width: 250px;*/
+/*    height: 250px;*/
+/*    -webkit-animation: spin 2s linear infinite;*/
+/*    animation: spin 2s linear infinite;*/
+/*}*/
+
+/*@-webkit-keyframes spin {*/
+/*    0% {*/
+/*        -webkit-transform: rotate(0deg);*/
+/*    }*/
+/*    100% {*/
+/*        -webkit-transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+/*@keyframes spin {*/
+/*    0% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*    100% {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+
+.preloader {
+    height: 370px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+.preloader img {
+    width: 150px;
+    height: auto;
 }
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
