@@ -1,5 +1,5 @@
 const openWeatherURL = "https://api.openweathermap.org/data/2.5/weather"
-const OPEN_WEATHER_API_KEY = "87fce2d80f614e05b08155651211803"
+const OPEN_WEATHER_API_KEY = "5a64a59089eaa18ea98d99d393e609f6"
 
 function currentLocationGetter() {
     return new Promise((resolve, reject) => {
