@@ -1,14 +1,3 @@
-// template +
-// ; in each end line +
-// Promise all +
-// Same cities in english and russian +
-// Alert if city is already shown +
-// Remove logging in getWeatherForCity and getWeatherWithCoordinates +
-// Enter +
-// Preloader +
-// Split files +
-// Text auto +
-
 const LOCAL_STORAGE_KEY = "Weather-for-each-city";
 
 let geolocation = navigator.geolocation;
@@ -78,7 +67,6 @@ async function getCities() {
                 if (!document.getElementById(x + "-city")) {
                     promiseArray.push(getWeatherForCity(x));
                     weatherFavourite.appendChild(div);
-                    // console.log(div);
                 }
             }
         );

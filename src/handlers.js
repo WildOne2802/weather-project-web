@@ -1,4 +1,5 @@
 const openWeatherURL = "https://api.openweathermap.org/data/2.5/weather"
+const OPEN_WEATHER_API_KEY = "87fce2d80f614e05b08155651211803"
 
 function currentLocationGetter() {
     return new Promise((resolve, reject) => {
@@ -18,13 +19,13 @@ function currentLocationGetter() {
 }
 
 async function getWeatherForCity(city) {
-    // return await fetch(`${openWeatherURL}?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
-    return await fetch(`http://localhost:3000/weather/city?name=${city}`).then(r => r.json());
+    return await fetch(`${openWeatherURL}?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
+    // return await fetch(`http://localhost:3000/weather/city?name=${city}`).then(r => r.json());
     // return await fetch(`https://weather-project-backend.herokuapp.com/weather/city?name=${city}`).then(r => r.json());
 }
 
 async function getWeatherWithCoordinates({latitude, longitude}) {
-    // return await fetch(`${openWeatherURL}?lat=${latitude}&lon=${longitude}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
-    return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`).then(r => r.json());
+    return await fetch(`${openWeatherURL}?lat=${latitude}&lon=${longitude}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
+    // return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`).then(r => r.json());
     // return await fetch(`https://weather-project-backend.herokuapp.com/weather/coordinates?lat=${latitude}&lon=${longitude}`).then(r => r.json());
 }
