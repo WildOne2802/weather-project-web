@@ -50,10 +50,9 @@ async function currentLocationWeather() {
     }
 }
 
-async function getCities() {
-    let cities = await loadFromLocalStorage();
-    await currentLocationWeather();
-
+async function getCities(){
+    // let cities = await loadFromLocalStorage();
+    let cities = await getFavourites();
     let template = document.getElementById('preloaderTemplate');
     let clone = template.content.cloneNode(true);
     let div = document.createElement("div");
@@ -82,6 +81,11 @@ async function getCities() {
     );
 }
 
+async function main() {
+    await currentLocationWeather();
+    await getCities();
+}
+
 document.getElementById("townInput").addEventListener("keyup", ({key}) => {
     if (key === "Enter") {
         submitCity();
@@ -96,4 +100,4 @@ function locationRefreshListener() {
     currentLocationWeather();
 }
 
-getCities();
+main();

@@ -3,24 +3,47 @@ async function submitCity() {
 
     if (city) {
         getWeatherForCity(city).then(response => {
-                if (!response.error && response !== null) {
-                    addCityToLocalStorage(response.name).then(
-                        () => {
-                            document.getElementById("townInput").value = null;
-                            getCities();
-                        }
-                    )
+                // if (!response.error && response !== null) {
+                //     addCityToLocalStorage(response.name).then(
+                //         () => {
+                //             document.getElementById("townInput").value = null;
+                //             getCities();
+                //         }
+                //     )
+                // } else {
+                //     alert("No matching location found.");
+                // }
+                if (response !== null) {
+                    if (document.getElementById(response.name + "-city")) {
+                        alert("City is already added.")
+                    } else {
+                        addCityToDatabase(response.name).then(response => {
+                            if (response) {
+                                document.getElementById("townInput").value = null;
+                                getCities();
+                            } else {
+                                alert("[submitCity addCityToDatabase] error.");
+                            }
+                        });
+                    }
                 } else {
-                    alert("No matching location found.");
+                    alert("[submitCity] No matching location found.");
                 }
             }
-        )
+        );
     }
 }
 
 function deleteCityCard(name) {
-    document.getElementById(name + "-city").remove();
-    removeCityFromLocalStorage(name);
+    // document.getElementById(name + "-city").remove();
+    // removeCityFromLocalStorage(name);
+    removeCityFromDatabase(name).then(response => {
+        if (response) {
+            document.getElementById(name + "-city").remove();
+        } else {
+            alert("[deleteCityCard removeCityFromDatabase] error.");
+        }
+    });
 }
 
 function fillerForMain(data) {
