@@ -1,6 +1,3 @@
-const openWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
-const OPEN_WEATHER_API_KEY = "5a64a59089eaa18ea98d99d393e609f6";
-
 const herokuURL = "https://weather-project-backend.herokuapp.com/weather";
 
 function handleError(response) {
