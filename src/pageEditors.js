@@ -3,10 +3,12 @@ async function submitCity() {
 
     if (city) {
         getWeatherForCity(city).then(response => {
-                if (response !== null) {
+                console.log(response)
+                if (response.cod !== '404') {
                     if (document.getElementById(response.name + "-city")) {
                         alert("City is already added.")
                     } else {
+                        // console.log("checkContinue")
                         addCityToDatabase(response.name).then(response => {
                             if (response) {
                                 document.getElementById("townInput").value = null;
