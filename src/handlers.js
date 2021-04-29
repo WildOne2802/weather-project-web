@@ -27,33 +27,33 @@ function currentLocationGetter() {
 
 async function getWeatherForCity(city) {
     // return await fetch(`${openWeatherURL}?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
-    return await fetch(`http://localhost:3000/weather/city?name=${encodeURIComponent(city)}`, {method: "GET"}).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
-    // return await fetch(`${herokuURL}/city?name=${city}`, {method: "GET"}).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
+    // return await fetch(`http://localhost:3000/weather/city?name=${encodeURIComponent(city)}`, {method: "GET"}).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
+    return await fetch(`${herokuURL}/city?name=${city}`, {method: "GET"}).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
 }
 
 async function getWeatherWithCoordinates({latitude, longitude}) {
     // return await fetch(`${openWeatherURL}?lat=${latitude}&lon=${longitude}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
-    return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`, {method: "GET"}).then(async (r) => {
-        return await r.json();
-    });
-    // return await fetch(`${herokuURL}/coordinates?lat=${latitude}&lon=${longitude}`, {method: "GET"}).then(r => r.json());
+    // return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`, {method: "GET"}).then(async (r) => {
+    //     return await r.json();
+    // });
+    return await fetch(`${herokuURL}/coordinates?lat=${latitude}&lon=${longitude}`, {method: "GET"}).then(r => r.json());
 }
 
 async function getFavourites() {
-    return await fetch('http://localhost:3000/weather/favourites', {method: "GET"}).then(async (r) => {
-        return await r.json();
-    });
-    // return await fetch(`${herokuURL}/favourites`, {method: "GET"} ).then(async r => {
+    // return await fetch('http://localhost:3000/weather/favourites', {method: "GET"}).then(async (r) => {
     //     return await r.json();
     // });
+    return await fetch(`${herokuURL}/favourites`, {method: "GET"} ).then(async r => {
+        return await r.json();
+    });
 }
 
 async function addCityToDatabase(name) {
-    return await fetch(`http://localhost:3000/weather/favourites?name=${name}`, {method: "POST"});
-    // return await fetch(`${herokuURL}/favourites?name=${name}`, {method: "POST"});
+    // return await fetch(`http://localhost:3000/weather/favourites?name=${name}`, {method: "POST"});
+    return await fetch(`${herokuURL}/favourites?name=${name}`, {method: "POST"});
 }
 
 async function removeCityFromDatabase(name) {
-    return await fetch(`http://localhost:3000/weather/favourites?name=${name}`, {method: "DELETE"});
-    // return await fetch(`${herokuURL}/favourites?name=${name}`, {method: "DELETE"});
+    // return await fetch(`http://localhost:3000/weather/favourites?name=${name}`, {method: "DELETE"});
+    return await fetch(`${herokuURL}/favourites?name=${name}`, {method: "DELETE"});
 }
