@@ -3,16 +3,6 @@ async function submitCity() {
 
     if (city) {
         getWeatherForCity(city).then(response => {
-                // if (!response.error && response !== null) {
-                //     addCityToLocalStorage(response.name).then(
-                //         () => {
-                //             document.getElementById("townInput").value = null;
-                //             getCities();
-                //         }
-                //     )
-                // } else {
-                //     alert("No matching location found.");
-                // }
                 if (response !== null) {
                     if (document.getElementById(response.name + "-city")) {
                         alert("City is already added.")

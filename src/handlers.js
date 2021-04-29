@@ -28,7 +28,7 @@ function currentLocationGetter() {
 async function getWeatherForCity(city) {
     // return await fetch(`${openWeatherURL}?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`).then(r => r.json());
     // return await fetch(`http://localhost:3000/weather/city?name=${city}`).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
-    return await fetch(`${herokuURL}/city?name=${city}`).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
+    return await fetch(`${herokuURL}/city?name=${city}`, {method: "GET"}).then(handleError).then(r => (r === null) ? r : r.json()).catch((e) => alert("City not found"));
 }
 
 async function getWeatherWithCoordinates({latitude, longitude}) {
@@ -36,11 +36,11 @@ async function getWeatherWithCoordinates({latitude, longitude}) {
     // return await fetch(`http://localhost:3000/weather/coordinates?lat=${latitude}&lon=${longitude}`).then(async (r) => {
     //     return await r.json();
     // });
-    return await fetch(`${herokuURL}/coordinates?lat=${latitude}&lon=${longitude}`).then(r => r.json());
+    return await fetch(`${herokuURL}/coordinates?lat=${latitude}&lon=${longitude}`, {method: "GET"}).then(r => r.json());
 }
 
 async function getFavourites() {
-    return await fetch('http://localhost:3000/weather/favourites').then(async (r) => {
+    return await fetch('http://localhost:3000/weather/favourites', {method: "GET"}).then(async (r) => {
         return await r.json();
     });
     //return await fetch(`${herokuURL}/favourites`).then(r => r.json());
